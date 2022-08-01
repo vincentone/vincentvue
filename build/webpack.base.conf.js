@@ -1,3 +1,11 @@
+/*
+ * @Author: vincent 1343327598@qq.com
+ * @Date: 2022-08-01 10:58:38
+ * @LastEditors: vincent 1343327598@qq.com
+ * @LastEditTime: 2022-08-01 16:26:20
+ * @FilePath: /vincentvue/build/webpack.base.conf.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
@@ -49,6 +57,9 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        options: {
+          plugins: ['syntax-dynamic-import']
+        },
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
